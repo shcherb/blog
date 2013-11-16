@@ -6,9 +6,14 @@ gem 'bcrypt-ruby'
 gem 'protected_attributes'
 
 # Use sqlite3 as the database for Active Record
-group :development do
+group :development, :test do
   gem 'sqlite3'
   gem 'annotate'
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'capybara'
 end
 
 group :assets do
