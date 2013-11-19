@@ -1,14 +1,24 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>Ruby on Rails Tutorial Sample App | <%= yield(:title) %></title>
+  <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div id="wrap">
+    <%= render 'layouts/header' %>
+    <div id="content">
+      <div id="sidebar">
+      </div>
+      <div id="left">
+        <%= yield %>
+      </div>
+      <div class="clear"></div>
+      <%= render 'layouts/footer' %>
+    </div>
+  </div>
 </body>
 </html>
