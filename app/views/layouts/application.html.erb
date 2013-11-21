@@ -14,7 +14,13 @@
       <div id="sidebar">
       </div>
       <div id="left">
-        <%= yield %>
+        <div class="post">
+          <div class="posttop"></div>
+          <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>"><%= value %></div>
+          <% end %>
+          <%= yield %>
+        </div>
       </div>
       <div class="clear"></div>
       <%= render 'layouts/footer' %>
