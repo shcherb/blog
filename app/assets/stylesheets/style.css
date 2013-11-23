@@ -34,7 +34,7 @@ a:active {color:#584A30;}
 a:hover {color:#7C5B43; text-decoration:none;}
 
 #content #left p {line-height:20px; margin-bottom:20px;}
-#sidebar .sidebartop {background:url(sidebartop.jpg) no-repeat; height:65px;}
+#sidebar .sidebartop {background:url(sidebartop.jpg) no-repeat; height:65px; padding:5px 10px 5px 12px;}
 #sidebarcontent {padding:5px 10px 5px 12px;}
 
 #sidebar h2 {background:url(sidebarheading.jpg) no-repeat center bottom; display:block; padding:5px; font-size:18px;}

@@ -1,0 +1,15 @@
+<% provide(:title, "Sign in") %>
+
+<div class="postitem">
+  <h2>Sign In
+    <span class="postinfo">Wellcome to Blog</span>
+  </h2>
+  <div class="form">
+    <%= render 'form' %>
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  </div>
+</div>
+<div class="postbottom">  
+  <%= link_to 'Back', root_path %>
+</div>
+
