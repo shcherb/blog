@@ -1,7 +1,15 @@
 @import "bootstrap";
 
 
+/* mixins, variables, etc. */
 
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 
 /* miscellaneous */
@@ -28,4 +36,12 @@
 .field_with_errors {
   @extend .control-group;
   @extend .error;
+}
+
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+    z-index: 2;
+    color: ;
+    background-color: ;
+    border-color: rgb(211, 194, 163);
+    cursor: default;
 }

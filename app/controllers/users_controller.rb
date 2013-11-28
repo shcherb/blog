@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_filter :signed_in_user, only: [:index, :edit, :update]
+  before_filter :correct_user,   only: [:edit, :update]
+  before_filter :admin_user,     only: :destroy
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page])
   end
 
   # GET /users/1
@@ -45,6 +48,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
+        sign_in @user
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
@@ -68,6 +72,23 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+    end
+
+    # Only signed in user can change profile
+    def signed_in_user
+      store_location
+      redirect_to signin_url, notice: "Please sign in." unless signed_in?
+    end
+
+    # Only correct user can change own profile
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_path) unless current_user?(@user)
+    end
+
+    # admin_user can't delete someself
+    def admin_user
+      redirect_to(root_path) unless current_user.admin?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
