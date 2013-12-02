@@ -1,13 +1,6 @@
-<footer id="templatemo_footer">
-  <small>
-    <a href="http://railstutorial.org/">Rails Tutorial</a>
-    by Michael Hartl
-  </small>
-  <nav class="footer_menu_list">
-    <ul>
-      <li><%= link_to "About",   '#' %></li>
-      <li><%= link_to "Contact", '#' %></li>
-      <li><a href="http://news.railstutorial.org/">News</a></li>
-    </ul>
-  </nav>
+<footer>
+  <div id="footer">
+    <p>Copyright &copy; m | <a href="http://news.railstutorial.org/">Railstutorial news</a></p>
+    <p id="credit"><a target="_blank" rel="nofollow" href="http://www.ramblingsoul.com/">CSS Template</a> by RamblingSoul</p>
+  </div>
 </footer> 

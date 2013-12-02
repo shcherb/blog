@@ -1,6 +1,16 @@
-<h1>Editing post</h1>
+<% provide(:title, "Editing post") %>
 
-<%= render 'form' %>
+<div class="post">
+  <div class="posttop"></div>
+  <div class="postitem">
+    <h2>Editing post</h2>
+    <%= render 'form' %>
+  </div> 
+  <div class="postbottom">  
+    <%= link_to 'Show', @post %> |
+    <%= link_to 'Back', allposts_path %>
+  </div>
+</div>
 
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+
+

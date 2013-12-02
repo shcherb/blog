@@ -34,4 +34,8 @@ module SessionsHelper
     session[:return_to] = request.url
   end
 
+  def store_current_location
+    session[:return_to] = request.original_url
+  end
+
 end
