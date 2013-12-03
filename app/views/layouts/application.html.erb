@@ -15,12 +15,12 @@
         <div class="sidebartop">
           <% if signed_in? %> 
             <h3> Active account: <br> <%= current_user[:email] %> </h3>
+            <%= gravatar_for current_user %>
             <ul>
               <li><%= link_to "Profile", current_user %></li>
               <li><%= link_to "Settings", edit_user_path(current_user) %></li>
               <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
             </ul>
-            <%= gravatar_for current_user %>
           <% end %>
         </div>
         <div id="sidebarcontent">
